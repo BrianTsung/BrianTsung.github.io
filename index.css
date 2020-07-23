@@ -29,12 +29,15 @@
   .namebox {
     width: 50%;
   }
+
   .name {
     float: right;
   }
+
   .headshotbox {
     width: 50%;
   }
+
   .headshot {
     padding: 0 10% 0 10%;
   }
@@ -48,7 +51,7 @@
   .namebox {
     width: 100%;
     position: absolute;
-    top: 50%;
+    top: 55%;
   }
   .name {
     text-align: center;
