@@ -47,7 +47,7 @@
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 800px) {
   .namebox {
     width: 100%;
     position: absolute;
@@ -60,7 +60,7 @@
   .headshotbox {
     width: 100%;
     position: absolute;
-    top: 30%;
+    top: 20%;
   }
 
   .headshot {
@@ -72,5 +72,11 @@
   .line {
     width: 80%;
     margin: auto;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .headshotbox{
+    top: 30%;
   }
 }
