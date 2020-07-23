@@ -1,0 +1,73 @@
+.name {
+  font-family: Microsoft JhengHei;
+  font-weight: bold;
+  color: azure;
+}
+
+.headshot {
+  width: 25%;
+  border-radius: 50%;
+  opacity: 0%;
+}
+
+.line {
+  height: 2px;
+  background-color: #fff;
+  display: block;
+  opacity: 0%;
+}
+
+@media screen and (min-width: 800px) {
+  .window {
+    width: 97vw;
+    height: 97vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .namebox {
+    width: 50%;
+  }
+  .name {
+    float: right;
+  }
+  .headshotbox {
+    width: 50%;
+  }
+  .headshot {
+    padding: 0 10% 0 10%;
+  }
+
+  .line{
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .namebox {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+  }
+  .name {
+    text-align: center;
+  }
+
+  .headshotbox {
+    width: 100%;
+    position: absolute;
+    top: 30%;
+  }
+
+  .headshot {
+    width: 40%;
+    display: block;
+    margin: auto;
+  }
+
+  .line {
+    width: 80%;
+    margin: auto;
+  }
+}

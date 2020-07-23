@@ -6,23 +6,22 @@
     <meta name="author" content="Brian Tsung" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Brian Tsung</title>
-    <style>
-      .window {
-        width: 97vw;
-        height: 97vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-    </style>
+    <link rel="stylesheet" href="index.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
   </head>
   <body style="background-color: #457b9d;">
     <div class="window">
-      <h1 style="font-family:Microsoft JhengHei; font-weight: bold; color: azure;">叢伯蘭/Brian Tsung</h1>&emsp;
-      <img
-        src="headshot.jpg"
-        style="width:15%; border-radius: 50%;"
-      />
+      <div class="namebox">
+        <h1 class="name">
+          <span class="letters">叢伯蘭/Brian Tsung</span>
+          <span class="line" style="margin-top: 10px;"></span>
+        </h1>
+      </div>
+
+      <div class="headshotbox">
+        <img src="headshot.jpg" class="headshot" />
+      </div>
     </div>
   </body>
+  <script src="index.js"></script>
 </html>
