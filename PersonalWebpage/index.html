@@ -7,9 +7,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Brian Tsung</title>
     <link rel="stylesheet" href="index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   </head>
-  <body style="background-color: #457b9d;">
+  <body>
     <div class="window">
       <div class="namebox">
         <h1 class="name">
@@ -19,8 +30,78 @@
       </div>
 
       <div class="headshotbox">
-        <img src="headshot.jpg" class="headshot" />
+        <img src="headshot.jpg" class="headshot" onclick="transfer()" />
       </div>
+    </div>
+
+    <div class="swiper-container">
+      <img
+        src="BtnLeft.png"
+        class="outlineBtnLeft"
+        onmouseover="mouseOverleft()"
+        onmouseout="mouseOutleft()"
+        id="BtnLeft"
+      />
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="aboutme.png" class="outline" />
+          <button
+            class="BtnEnter"
+            onmouseover="mouseOverenter()"
+            onmouseout="mouseOutenter()"
+          >
+            enter
+          </button>
+        </div>
+        <div class="swiper-slide">
+          <img src="experience.png" class="outline" />
+          <button
+            class="BtnEnter"
+            onmouseover="mouseOverenter()"
+            onmouseout="mouseOutenter()"
+          >
+            enter
+          </button>
+        </div>
+        <div class="swiper-slide">
+          <img src="skills.png" class="outline" />
+          <button
+            class="BtnEnter"
+            onmouseover="mouseOverenter()"
+            onmouseout="mouseOutenter()"
+          >
+            enter
+          </button>
+        </div>
+        <div class="swiper-slide">
+          <img src="works.png" class="outline" />
+          <button
+            class="BtnEnter"
+            onmouseover="mouseOverenter()"
+            onmouseout="mouseOutenter()"
+          >
+            enter
+          </button>
+        </div>
+        <div class="swiper-slide">
+          <img src="contact.png" class="outline" />
+          <button
+            class="BtnEnter"
+            onmouseover="mouseOverenter()"
+            onmouseout="mouseOutenter()"
+          >
+            enter
+          </button>
+        </div>
+      </div>
+      <img
+        src="BtnRight.png"
+        class="outlineBtnRight"
+        onmouseover="mouseOverright()"
+        onmouseout="mouseOutright()"
+        id="BtnRight"
+      />
+      <div class="swiper-pagination"></div>
     </div>
   </body>
   <script src="index.js"></script>

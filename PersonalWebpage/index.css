@@ -1,7 +1,11 @@
+body {
+  background-color: #40916c;
+}
+
 .name {
   font-family: Microsoft JhengHei;
   font-weight: bold;
-  color: azure;
+  color: #f1faee;
 }
 
 .headshot {
@@ -12,7 +16,7 @@
 
 .line {
   height: 2px;
-  background-color: #fff;
+  background-color: #f1faee;
   display: block;
   opacity: 0%;
 }
@@ -39,11 +43,65 @@
   }
 
   .headshot {
-    padding: 0 10% 0 10%;
+    margin: 0 10% 0 10%;
   }
 
-  .line{
+  .headshot:hover {
+    border: 2px #f1faee solid;
+    padding: 5px;
+    width: 35%;
+  }
+
+  .line {
     width: 100%;
+  }
+
+  .outline {
+    width: 70vh;
+    display: none;
+  }
+
+  .outlineBtnLeft,
+  .outlineBtnRight {
+    width: 15vh;
+    display: none;
+    opacity: 0%;
+  }
+
+  .BtnEnter {
+    position: absolute;
+    margin-top: 300px;
+    height: 5%;
+    width: 20%;
+    background-color: #f1faee;
+    border: 1px #949494 solid;
+    color: #949494;
+    font-family: Microsoft JhengHei;
+    display: none;
+  }
+
+  .BtnEnter:focus {
+    outline: none;
+  }
+
+  .swiper-container {
+    width: 50vw;
+    height: 97vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;
+    --swiper-pagination-color: #f1faee;
+  }
+
+  .swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .swiper-pagination-bullet-active {
+    background-color: #f1faee;
   }
 }
 
@@ -76,7 +134,7 @@
 }
 
 @media screen and (max-width: 400px) {
-  .headshotbox{
+  .headshotbox {
     top: 30%;
   }
 }
