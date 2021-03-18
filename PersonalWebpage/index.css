@@ -58,6 +58,7 @@ body {
 
   .outline {
     width: 70vh;
+    height: 70vh;
     display: none;
   }
 
@@ -70,7 +71,7 @@ body {
 
   .BtnEnter {
     position: absolute;
-    margin-top: 300px;
+    margin-top: 350px;
     height: 5%;
     width: 20%;
     background-color: #f1faee;
