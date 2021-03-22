@@ -1,5 +1,7 @@
 body {
   background-color: #40916c;
+  margin: 0;
+  padding: 0;
 }
 
 .name {
@@ -22,9 +24,10 @@ body {
 }
 
 @media screen and (min-width: 800px) {
+  /* ---home--- */
   .window {
-    width: 97vw;
-    height: 97vh;
+    width: 100vw;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -56,6 +59,7 @@ body {
     width: 100%;
   }
 
+  /* ---outline--- */
   .outline {
     width: 70vh;
     height: 70vh;
@@ -87,7 +91,7 @@ body {
 
   .swiper-container {
     width: 50vw;
-    height: 97vh;
+    height: 96vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -103,6 +107,23 @@ body {
 
   .swiper-pagination-bullet-active {
     background-color: #f1faee;
+  }
+
+  /* ---content--- */
+  .font{
+    font-family: Microsoft JhengHei;
+    font-weight: bold;
+    margin: 0;
+    padding: 10%;
+    opacity: 0%;
+    font-size: 22px;
+  }
+  /* about me */
+  .aboutme{
+    height:0vh;
+    width:100vw;
+    background-color: #accfbb;
+    display: none;
   }
 }
 

@@ -1,3 +1,4 @@
+// ---home---
 var textWrapper = document.querySelector(".name .letters");
 textWrapper.innerHTML = textWrapper.textContent.replace(
   /\S/g,
@@ -31,23 +32,6 @@ anime
     offset: "-=600",
   });
 
-var mySwiper = new Swiper(".swiper-container", {
-  effect: "flip",
-  flipEffect: {
-    slideShadows: false,
-  },
-  loop: true,
-  pagination: {
-    el: ".swiper-pagination",
-  },
-  navigation: {
-    nextEl: ".outlineBtnRight",
-    prevEl: ".outlineBtnLeft",
-  },
-  observer: true,
-  observeParents: true,
-});
-
 function transfer() {
   $(".namebox").hide();
   $(".headshotbox").hide();
@@ -57,6 +41,7 @@ function transfer() {
   $(".outlineBtnLeft").show();
   $(".outlineBtnRight").show();
   $(".BtnEnter").show();
+
   anime
     .timeline()
     .add({
@@ -99,6 +84,24 @@ function transfer() {
       offset: "-=400",
     })*/
 }
+
+// ---outline---
+var mySwiper = new Swiper(".swiper-container", {
+  effect: "flip",
+  flipEffect: {
+    slideShadows: false,
+  },
+  loop: true,
+  pagination: {
+    el: ".swiper-pagination",
+  },
+  navigation: {
+    nextEl: ".outlineBtnRight",
+    prevEl: ".outlineBtnLeft",
+  },
+  observer: true,
+  observeParents: true,
+});
 
 function mouseOverleft() {
   $("#BtnLeft").css("opacity", "100%");
@@ -157,3 +160,32 @@ function changebgcolor(num) {
     backgroundColor: Bgcolor[count],
   });
 }
+
+// ---content---
+function enter(){
+  $(".swiper-container").hide();
+  $(".outline").hide();
+  $(".outlineBtnLeft").hide();
+  $(".outlineBtnRight").hide();
+  $(".BtnEnter").hide();
+  $(".aboutme").show();
+
+  anime
+  .timeline()
+  .add({
+    targets: ".aboutme",
+    height: "100vh",
+    easing: "easeInOutQuad",
+    duration: 500
+  })
+  .add({
+    targets: ".font",
+    opacity: [0, 1],
+    color: "#40916c",
+    easing: "easeInOutQuad",
+    duration: 500,
+    offset: "-=400",
+  })
+}
+
+

@@ -21,6 +21,7 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   </head>
   <body>
+    <!-- home -->
     <div class="window">
       <div class="namebox">
         <h1 class="name">
@@ -34,6 +35,7 @@
       </div>
     </div>
 
+    <!-- outline -->
     <div class="swiper-container">
       <img
         src="BtnLeft.png"
@@ -49,6 +51,7 @@
             class="BtnEnter"
             onmouseover="mouseOverenter()"
             onmouseout="mouseOutenter()"
+            onclick="enter()"
           >
             enter
           </button>
@@ -102,6 +105,15 @@
         id="BtnRight"
       />
       <div class="swiper-pagination"></div>
+    </div>
+
+    <!-- content -->
+    <div class="aboutme">
+      <ul class="font">
+        <li>aaa</li>
+        <li>bbb</li>
+        <li>ccc</li>
+      </ul>
     </div>
   </body>
   <script src="index.js"></script>
