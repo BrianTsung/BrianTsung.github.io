@@ -134,10 +134,15 @@ class App extends React.Component {
               全部景點
             </button>
             <button className="headerbtn active">縣市景點</button>
-          </div>　 
+          </div>
+          　
           <div>
             <form>
-              <select className="form-select" value={this.state.city} onChange={this.selectcity}>
+              <select
+                className="form-select"
+                value={this.state.city}
+                onChange={this.selectcity}
+              >
                 <option value="Taipei">台北市</option>
                 <option value="NewTaipei">新北市</option>
                 <option value="Taoyuan">桃園市</option>
