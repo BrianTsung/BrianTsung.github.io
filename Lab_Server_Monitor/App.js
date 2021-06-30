@@ -76,7 +76,7 @@ class App extends React.Component {
           return i * 80;
         },
       });
-    let url = `http://140.115.51.115:9999/api/serverInfo/F/`;
+    let url = `https://140.115.51.115:9999/api/serverInfo/F/`;
     axios
       .get(url, {
         headers: {
