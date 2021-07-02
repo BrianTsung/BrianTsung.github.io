@@ -56,8 +56,7 @@ class App extends React.Component {
       rejectUnauthorized: false,
     });
     let url = `https://140.115.51.115:9999/api/serverInfo/F/`;
-    axios
-      .get(url, { httpsAgent: agent })
+    fetch(url)
       .then((response) => response.data)
       .then((data) => {
         this.setState({ ip_datas: data });
