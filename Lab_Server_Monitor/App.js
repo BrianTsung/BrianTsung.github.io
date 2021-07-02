@@ -14,9 +14,10 @@ function Ip_list(props) {
       <div
         className="ip"
         style={{ color: props.font_color }}
+        onMouseOver={props.onMouseOver}
         onClick={props.onClick}
       >
-        {data}
+        {data.ip}
       </div>
       <div
         className="ip_line"
@@ -30,22 +31,36 @@ class App extends React.Component {
     super(props);
     this.state = {
       font_color: "#caf0f8",
-      gpu_utilazations: 0,
+      ip_datas: [],
+      ip_title: "127.0.0.1",
+      gpu_id: 0,
+      timestamp: "2021/06/29",
       gpu_memory_uses: 0,
+      gpu_memory_all: 0,
+      gpu_utilazations: 0,
       gpu_temperature: 0,
       utilazations_color: "#95D5B2",
       memoryuses_color: "#95D5B2",
       temperature_color: "#95D5B2",
-      ip_title: "127.0.0.1",
-      gpu_id: 0,
       user_name: "楊仲軒",
-      timestamp: "2021/06/29",
     };
     this.fanClick = this.fanClick.bind(this);
+    this.fanHover = this.fanHover.bind(this);
     this.zhengClick = this.zhengClick.bind(this);
     this.ipClick = this.ipClick.bind(this);
+    this.ipHover = this.ipHover.bind(this);
   }
 
+  fanHover() {
+    let url = `https://140.115.51.115:9999/api/serverInfo/F/`;
+    axios
+      .get(url)
+      .then((response) => response.data)
+      .then((data) => {
+        this.setState({ ip_datas: data });
+        console.log(data);
+      });
+  }
   fanClick() {
     $("#fan_ori").hide();
     $("#zheng_ori").hide();
@@ -75,18 +90,6 @@ class App extends React.Component {
         delay: function (el, i, l) {
           return i * 80;
         },
-      });
-    let url = `https://140.115.51.115:9999/api/serverInfo/F/`;
-    axios
-      .get(url, {
-        headers: {
-          "Access-Control-Allow-Origin": "*",
-        },
-      })
-      .then((response) => response.data)
-      .then((data) => {
-        // this.setState({ datas: data });
-        console.log(data);
       });
   }
   zhengClick() {
@@ -119,6 +122,32 @@ class App extends React.Component {
         delay: function (el, i, l) {
           return i * 80;
         },
+      });
+  }
+  ipHover(event) {
+    let query_ip = event.currentTarget.innerHTML;
+    let url = `https://140.115.51.115:9999/api/gpuInfo/${query_ip}/`;
+    axios
+      .get(url)
+      .then((response) => response.data)
+      .then((data) => {
+        this.setState({
+          gpu_id: data.gpu_id,
+          timestamp: data.timestamp,
+          gpu_memory_uses: data.gpu_memory_uses,
+          gpu_memory_all: data.gpu_memory_all,
+          gpu_utilazations: data.gpu_utilazations,
+          gpu_temperature: data.gpu_temperature,
+        });
+        console.log(
+          // data.gpu_id,
+          // data.timestamp,
+          // data.gpu_memory_uses,
+          // data.gpu_memory_all,
+          // data.gpu_utilazations,
+          // data.gpu_temperature
+          data
+        );
       });
   }
   ipClick(event) {
@@ -170,19 +199,20 @@ class App extends React.Component {
     }
   }
   render() {
-    let data = [
-      "127.115.51.89",
-      "127.115.51.90",
-      "127.115.51.91",
-      "127.115.51.92",
-    ];
-    let server_count = data.length;
+    // let data = [
+    //   "127.115.51.89",
+    //   "127.115.51.90",
+    //   "127.115.51.91",
+    //   "127.115.51.92",
+    // ];
+    let server_count = this.state.ip_datas.length;
     return (
       <div>
         <div>
           <div
             id="fan_ori"
             className="family fan_family"
+            onMouseOver={this.fanHover}
             onClick={this.fanClick}
           >
             范家
@@ -211,8 +241,9 @@ class App extends React.Component {
         </div>
         <div className="ip_list" style={{ display: "none" }}>
           <Ip_list
-            ip_datas={data}
+            ip_datas={this.state.ip_datas}
             font_color={this.state.font_color}
+            onMouseOver={this.ipHover}
             onClick={this.ipClick}
           ></Ip_list>
         </div>
