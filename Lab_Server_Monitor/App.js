@@ -52,9 +52,12 @@ class App extends React.Component {
   }
 
   fanHover() {
+    const agent = new https.Agent({
+      rejectUnauthorized: false,
+    });
     let url = `https://140.115.51.115:9999/api/serverInfo/F/`;
     axios
-      .get(url)
+      .get(url, { httpsAgent: agent })
       .then((response) => response.data)
       .then((data) => {
         this.setState({ ip_datas: data });
