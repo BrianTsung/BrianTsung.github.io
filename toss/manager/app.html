@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body style="background-color: #ffd7ba">
+    <select
+      class="form-select"
+      id="select"
+      style="
+        position: absolute;
+        top: 30%;
+        left: 20%;
+        height: 100px;
+        width: 600px;
+        font-size: 24px;
+      "
+    >
+      <option selected>請選擇結果</option>
+      <option value="pp">陰筊</option>
+      <option value="nn">笑筊</option>
+      <option value="pn">聖筊</option>
+    </select>
+    <button
+      type="button"
+      class="btn btn-primary"
+      style="
+        position: absolute;
+        top: 60%;
+        left: 40%;
+        height: 130px;
+        width: 230px;
+        font-size: 34px;
+      "
+      onclick="toss()"
+    >
+      設定
+    </button>
+
+    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-analytics.js"></script>
+    <script>
+      var firebaseConfig = {
+        apiKey: "AIzaSyD4oQxJT7pkvuDiX_NhCOupXz1Nrwm-My8",
+        authDomain: "toss-e520b.firebaseapp.com",
+        databaseURL: "https://toss-e520b-default-rtdb.firebaseio.com",
+        projectId: "toss-e520b",
+        storageBucket: "toss-e520b.appspot.com",
+        messagingSenderId: "795219883683",
+        appId: "1:795219883683:web:3db7e78a71167720ac3116",
+        measurementId: "G-S2TQ3L83VC",
+      };
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+
+      function toss() {
+        var id = document.getElementById("select");
+        var set_option = id.value;
+        console.log("click");
+        var db = firebase.database();
+        db.ref("/toss/")
+          .set({
+            result: set_option,
+          })
+          .catch(function () {
+            alert("伺服器發生錯誤，請稍後再試");
+          });
+        db.ref("toss").once("value", function (snapshot) {
+          var data = snapshot.val();
+          if (data.result == "nn") {
+            alert("設定為笑筊成功");
+          } else if (data.result == "pp") {
+            alert("設定為陰筊成功");
+          } else if (data.result == "pn") {
+            alert("設定為聖筊成功");
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
