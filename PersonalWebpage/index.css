@@ -92,7 +92,7 @@ body {
   .swiper-container {
     width: 50vw;
     height: 96vh;
-    display: flex;
+    margin: 0px auto;
     align-items: center;
     justify-content: center;
     display: none;
@@ -110,7 +110,7 @@ body {
   }
 
   /* ---content--- */
-  .font{
+  .font {
     font-family: Microsoft JhengHei;
     font-weight: bold;
     margin: 0;
@@ -119,9 +119,9 @@ body {
     font-size: 22px;
   }
   /* about me */
-  .aboutme{
-    height:0vh;
-    width:100vw;
+  .aboutme {
+    height: 0vh;
+    width: 100vw;
     background-color: #accfbb;
     display: none;
   }
