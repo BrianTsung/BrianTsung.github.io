@@ -1,5 +1,5 @@
 body {
-  background-color: #272640;
+  background-color: #272640 !important;
   font-family: Microsoft JhengHei;
 }
 
@@ -30,9 +30,11 @@ body {
 }
 .fan_family:hover {
   background-color: #383761;
+  cursor: pointer;
 }
 .zheng_family:hover {
   background-color: #383761;
+  cursor: pointer;
 }
 
 /*server_info*/
@@ -56,6 +58,7 @@ body {
 .ip:hover {
   font-size: 28px;
   font-weight: bold;
+  cursor: pointer;
 }
 .ip_line {
   height: 3px;
@@ -64,6 +67,25 @@ body {
   margin-bottom: 40px;
   opacity: 0%;
 }
+.arrowfan {
+  position: absolute;
+  left: 95%;
+  top: 5%;
+  height: 50px;
+  width: 50px;
+  opacity: 0%;
+  cursor: pointer;
+}
+.arrowzheng {
+  position: absolute;
+  left: 95%;
+  top: 5%;
+  height: 50px;
+  width: 50px;
+  opacity: 0%;
+  cursor: pointer;
+}
+
 /*GPU_info*/
 .ip_title {
   position: absolute;
@@ -79,6 +101,33 @@ body {
   font-size: 25px;
   opacity: 0%;
 }
+.gpu_id_list {
+  width: 200px;
+}
+.GPU_block {
+  position: absolute;
+  top: 20%;
+  left: 35%;
+  width: 65%;
+  height: 80%;
+}
+.id_circle {
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  border: 3px solid;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+}
+.GPU_block_item {
+  width: 95%;
+  height: 250px;
+  border: 5px solid;
+  border-radius: 15px;
+  margin-bottom: 5%;
+  box-shadow: 10px 5px 5px #515555;
+}
 .GPU_info {
   font-size: 28px;
   width: 250px;
@@ -89,17 +138,17 @@ body {
   position: relative;
   bottom: 50px;
 }
-.gpu_utilazations {
-  left: 40%;
-  top: 20%;
+.gpu_utilizations {
+  margin-left: 5%;
+  margin-top: 3%;
 }
 .gpu_memory_uses {
-  left: 25%;
-  top: 50%;
+  margin-left: 35%;
+  margin-top: 3%;
 }
 .gpu_temperature {
-  left: 55%;
-  top: 50%;
+  margin-left: 65%;
+  margin-top: 3%;
 }
 
 .CircularProgressbar {
@@ -146,4 +195,64 @@ body {
 
 .CircularProgressbar.CircularProgressbar-inverted .CircularProgressbar-trail {
   stroke: transparent;
+}
+
+/*Ip_register*/
+.table {
+  font-weight: bold;
+  border-collapse: collapse;
+  width: 100%;
+}
+.ip_arrow {
+  position: absolute;
+  top: 90%;
+  left: 95%;
+  width: 50px;
+  height: 50px;
+  border: 3px #a5a6f6 solid;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 50px;
+  color: #a5a6f6;
+  font-weight: bolder;
+  font-size: larger;
+  cursor: pointer;
+}
+.ip_arrow_back {
+  position: absolute;
+  left: 95%;
+  top: 5%;
+  height: 50px;
+  width: 50px;
+  opacity: 40%;
+  cursor: pointer;
+}
+.ip_register {
+  position: absolute;
+  width: 80%;
+  height: 70%;
+  margin: 10% 10% 0 10%;
+}
+.table_ip {
+  width: 35%;
+  color: #d6d6d6;
+  border: solid 1px;
+  padding: 8px;
+}
+
+.table_user {
+  width: 15%;
+  color: #d6d6d6;
+  border: solid 1px;
+  padding: 8px;
+}
+
+.table_item {
+  color: #d6d6d6;
+  border: solid 1px;
+  padding: 8px;
+}
+
+.table_item:hover {
+  background-color: #494bcf;
 }
