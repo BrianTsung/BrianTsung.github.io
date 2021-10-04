@@ -16,6 +16,7 @@ const fetchWeights = (urlPath) => {
         return;
       }*/
       const buf = xhr.response;
+      console.log(buf)
       if (!buf) {
         reject(new Error('invalid arraybuffer'));
         return;
