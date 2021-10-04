@@ -1,6 +1,6 @@
 let inputCanvas, outputContainer, statusMsg, transferBtn, modelReady = false, isTransfering = false;
 
-const landscape = pix2pix('./models/landscape13.pict', modelLoaded);
+const landscape = pix2pix('/models/landscape13.pict', modelLoaded);
 inputCanvas=document.getElementById("myCanvas");
 // function readURL(input) {
 //   if (input.files && input.files[0]) {
