@@ -9,6 +9,7 @@ const fetchWeights = (urlPath) => {
 
     const xhr = new XMLHttpRequest();
     xhr.open('GET', urlPath, true);
+    xhr.setRequestHeader("permissions-policy","interest-cohort");
     xhr.responseType = 'arraybuffer';
     xhr.onload = () => {
       /*if (xhr.status !== 200) {
