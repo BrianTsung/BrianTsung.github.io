@@ -322,7 +322,7 @@
           reader.onload = function (evt) {
             var replaceSrc = evt.target.result;
             //更換圖片
-            $("#tailoringImg").cropper("replace", replaceSrc, false); //默认false，适应高度，不失真
+            $("#tailoringImg").cropper("replace", replaceSrc, false);
           };
           reader.readAsDataURL(file.files[0]);
         }
