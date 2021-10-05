@@ -1,3 +1,4 @@
+/* yining1023 https://github.com/yining1023/pix2pix_tensorflowjs_lite */
 // Fetch weights from path
 const fetchWeights = (urlPath) => {
   return new Promise((resolve, reject) => {
