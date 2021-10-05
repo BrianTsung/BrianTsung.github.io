@@ -14,12 +14,6 @@ function setup() {
   transferBtn = select("#transferBtn");
 }
 
-function draw() {
-  if (mouseIsPressed) {
-    line(mouseX, mouseY, pmouseX, pmouseY);
-  }
-}
-
 function transfer() {
   isTransfering = true;
   let canvasElement = document.getElementById("myCanvas");
