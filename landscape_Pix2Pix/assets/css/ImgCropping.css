@@ -54,7 +54,6 @@
     left: 0;
     top: 0;
 
-    /* 水平垂直居中 浏览器版本号低的不支持transform */
     /*left: 50%;
     top: 50%;
     transform: translate(-50%,-50%);
