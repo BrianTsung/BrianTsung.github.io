@@ -1,3 +1,5 @@
+// yining1023 https://github.com/yining1023/pix2pix_tensorflowjs_lite
+
 class Pix2pix {
   constructor(model, callback) {
     this.ready = false;
